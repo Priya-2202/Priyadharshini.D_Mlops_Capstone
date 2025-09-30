@@ -19,7 +19,8 @@ This project provides an end-to-end analytics pipeline and web application to an
 
 ## Project Structure
 
-API Link
+API Link-[https://priyadharshini-d-mlops-capstone.onrender.com]
 
-Dashboard Link
+Dashboard Link-[https://priyadharshini-d-mlops-dashboard.streamlit.app]
+
 
