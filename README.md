@@ -137,10 +137,14 @@ The FastAPI server exposes the following endpoints:
 | Method | Endpoint                          | Description                                         |
 | :----- | :-------------------------------- | :-------------------------------------------------- |
 | `GET`  | `/performance/stores`             | Get sales performance data for all stores.          |
-| `GET`  | `/customers/rfm-segments`         | Get RFM and K-Means segment data for all customers. |
+| `GET`  | `/insights/payment-methods`       | Get payment details for different segments .        |
+| `GET`  | `/customers/rfm-segments`         | Get RFM segment data for all customers.             |
 | `GET`  | `/insights/seasonality`           | Get monthly and quarterly sales trend data.         |
+| `GET`  | `/customers/top-customers`        | Get top customers endpoint.                         |
+| `GET`  | `/customers/value-segmentation`   | Get value segmentation endpoint.                    |
 | `GET`  | `/insights/discount-impact`       | Get profitability and discount data by category.    |
 | `GET`  | `/customers/repeat-vs-onetime`    | Compare sales from repeat vs. one-time customers.   |
+| `GET`  | `/insights/category-by-segment`   | Get insights data by category and segment.          |
 | `GET`  | `/simulations/campaign`           | Run a campaign ROI simulation for a target segment. |
 
 ---
@@ -159,6 +163,7 @@ The Streamlit dashboard is organized into several pages for easy navigation:
 API Link-[https://priyadharshini-d-mlops-capstone.onrender.com/docs]
 
 Dashboard Link-[https://priyadharshini-d-mlops-dashboard.streamlit.app]
+
 
 
 
