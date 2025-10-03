@@ -3,15 +3,25 @@ This repository contains the source code for an end-to-end MLOps project designe
 
 📋 Table of Contents
 Project Overview
+
 Key Features
+
 Technology Stack
+
 System Architecture
+
 Project Structure
+
 Getting Started
+
 Prerequisites
+
 Installation
+
 Running the Application
+
 API Endpoints
+
 Dashboard Pages
 
 🎯 Project Overview
@@ -191,6 +201,7 @@ Campaign Simulator: An interactive tool for strategists to model the financial o
 API Link-[https://priyadharshini-d-mlops-capstone.onrender.com/docs]
 
 Dashboard Link-[https://priyadharshini-d-mlops-dashboard.streamlit.app]
+
 
 
 
