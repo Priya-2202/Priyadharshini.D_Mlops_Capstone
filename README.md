@@ -1,206 +1,165 @@
-MLOps Capstone: Retail & Customer Analytics Platform
-This repository contains the source code for an end-to-end MLOps project designed to deliver actionable insights from retail sales data. The system features an automated data pipeline, a machine learning model for customer segmentation, and a dual-interface for accessing insights via a REST API and an interactive web dashboard.
+# MLOps Capstone Project: Retail Store & Customer Insights
 
-📋 Table of Contents
-Project Overview
+This project is an end-to-end analytics and machine learning pipeline designed to provide actionable insights into a retail chain's store performance and customer behavior. It processes daily sales data, segments customers using an ML model, and serves the findings through a REST API and an interactive web dashboard.
 
-Key Features
+---
 
-Technology Stack
+## 📋 Table of Contents
+* [Project Overview](#-project-overview)
+* [Key Features](#-key-features)
+* [Tech Stack](#-tech-stack)
+* [Project Structure](#-project-structure)
+* [Setup and Installation](#-setup-and-installation)
+* [How to Run the Project](#-how-to-run-the-project)
+* [API Endpoints](#-api-endpoints)
+* [Dashboard Pages](#-dashboard-pages)
 
-System Architecture
+---
 
-Project Structure
+## 🎯 Project Overview
 
-Getting Started
+The primary goal of this project is to build a robust MLOps pipeline that transforms raw retail data into strategic business insights. The system automates data processing, performs RFM-based customer segmentation with K-Means clustering, and analyzes key business metrics like store performance, profitability, and seasonal trends. These insights are then made accessible to stakeholders via a FastAPI backend and a Streamlit-powered dashboard.
 
-Prerequisites
 
-Installation
 
-Running the Application
+---
 
-API Endpoints
+## ✨ Key Features
 
-Dashboard Pages
+* **Automated Data Pipeline:** Cleans, transforms, and enriches raw sales data automatically.
+* **ML-Powered Customer Segmentation:** Uses **RFM (Recency, Frequency, Monetary)** analysis combined with a **K-Means clustering** model to identify distinct customer segments like "Champions," "Loyal," and "At Risk."
+* **Performance Analytics:** Compares sales volume, revenue, and transaction counts across different stores.
+* **Profitability Insights:** Calculates the impact of discounts on net sales for each product category.
+* **Trend Analysis:** Identifies monthly and quarterly sales patterns to understand seasonality.
+* **Interactive Dashboard:** A user-friendly web application built with Streamlit for visualizing all key metrics and insights.
+* **REST API:** A scalable backend built with FastAPI to serve the processed data and analytics results.
+* **Campaign Simulation:** An interactive tool to model the potential ROI of marketing campaigns targeted at specific customer segments.
 
-🎯 Project Overview
-The primary goal of this project is to build a robust and automated MLOps pipeline that transforms raw retail data into strategic business intelligence. The system ingests daily sales data, performs RFM-based customer segmentation using a K-Means clustering model, and analyzes key business metrics. These insights are then exposed through a scalable FastAPI backend and visualized in a user-friendly Streamlit dashboard, enabling data-driven decision-making for marketing and sales strategies.
+---
 
-✨ Key Features
-Automated Data Pipeline: Ingests, cleans, and transforms raw sales data into an analysis-ready format.
+## 🛠️ Tech Stack
 
-ML-Powered Customer Segmentation: Implements RFM (Recency, Frequency, Monetary) analysis combined with K-Means clustering to categorize customers into meaningful segments (e.g., "Champions," "Loyal," "At Risk").
+* **Backend:** Python, FastAPI, Uvicorn, Gunicorn
+* **Frontend (Dashboard):** Streamlit
+* **Data Manipulation & ML:** Pandas, Scikit-learn
+* **Visualization:** Plotly
+* **Deployment:** `Procfile` for cloud platforms like Render or Heroku
 
-Store Performance Analytics: Delivers comparative insights on sales volume, revenue, and transaction counts across all retail locations.
+---
 
-Profitability & Discount Analysis: Calculates the net impact of discounts on sales revenue for each product category.
+## 📁 Project Structure
 
-Seasonal Trend Identification: Analyzes monthly and quarterly sales patterns to uncover and visualize business seasonality.
-
-Interactive Dashboard: A user-friendly web application built with Streamlit for visualizing key metrics, customer segments, and performance trends.
-
-RESTful API: A scalable API built with FastAPI to programmatically serve processed data and analytics results.
-
-Campaign ROI Simulator: An interactive tool to model the potential return on investment for marketing campaigns targeted at specific customer segments.
-
-🛠️ Technology Stack
-Category
-Technologies
-Backend
-Python, FastAPI
-Web Server
-Uvicorn, Gunicorn
-Dashboard
-Streamlit
-Data Science & ML
-Pandas, Scikit-learn
-Data Visualization
-Plotly
-Deployment
-Procfile for Heroku, Render, or similar platforms
-
-🏗️ System Architecture
-The project follows a sequential data flow:
-
-Data Ingestion: The data_processing.py script reads the raw customer_shopping_data.csv.
-
-Data Processing & Modeling: The script cleans the data, performs RFM analysis, and applies a K-Means clustering model to segment customers. The enriched data is saved as processed_customer_data.parquet.
-
-API Layer: The FastAPI application (api.py) loads the processed parquet file and exposes various endpoints to serve the data and insights.
-
-Presentation Layer: The Streamlit dashboard (dashboard.py) consumes data from the FastAPI endpoints to create interactive visualizations and reports for the end-user.
-
-📁 Project Structure
+```
 /MLOps_Capstone_Project/
-|
 |-- data/
-|   |-- customer_shopping_data.csv      # Raw input dataset
-|   |-- processed_customer_data.parquet # Processed and enriched output data
-|
+|   |-- customer_shopping_data.csv      # Raw input data
+|   |-- processed_customer_data.parquet # Processed output data
 |-- src/
 |   |-- __init__.py
-|   |-- data_processing.py              # Script for data ingestion, cleaning, and transformation
+|   |-- data_processing.py              # Script for data ingestion and cleaning
 |   |-- analysis.py                     # Core analytics and ML modeling functions
-|   |-- api.py                          # FastAPI application (backend)
-|   |-- dashboard.py                    # Streamlit application (frontend)
-|
-|-- Procfile                            # Deployment configuration for cloud platforms
-|-- requirements.txt                    # Python package dependencies
+|   |-- api.py                          # FastAPI application
+|   |-- dashboard.py                    # Streamlit dashboard application
+|-- Procfile                            # Deployment configuration
+|-- requirements.txt                    # Python dependencies
 |-- README.md                           # This file
+```
 
-🚀 Getting Started
-Follow these instructions to set up and run the project on your local machine.
+---
+### Process to Run it on Local VM:
+## ⚙️ Setup and Installation
 
-Prerequisites
-Python (version 3.8 or higher)
+Follow these steps to set up the project environment on your local machine.
 
-pip package manager
+### Prerequisites
+* Python 3.8 or higher
+* pip package manager
 
-Installation
-Clone the Repository
+### Installation Steps
+1.  **Clone the repository:**
+    ```bash
+    git clone <your-repository-url>
+    cd MLOps_Capstone_Project
+    ```
 
-git clone <your-repository-url>
-cd MLOps_Capstone_Project
+2.  **Create and activate a virtual environment:**
+    * **Windows:**
+        ```bash
+        python -m venv venv
+        .\venv\Scripts\activate
+        ```
+    * **macOS / Linux:**
+        ```bash
+        python3 -m venv venv
+        source venv/bin/activate
+        ```
 
-Create and Activate a Virtual Environment
+3.  **Install the required dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Windows:
+---
 
-python -m venv venv
-.\venv\Scripts\activate
+## 🚀 How to Run the Project
 
-macOS / Linux:
+The project consists of three main components that need to be run in order.
 
-python3 -m venv venv
-source venv/bin/activate
+### Step 1: Process the Data
+First, run the data processing script to generate the `processed_customer_data.parquet` file from the raw CSV.
 
-Install Dependencies
-
-pip install -r requirements.txt
-
-Running the Application
-The project components must be run in the following order.
-
-Step 1: Process the Data
-Run the data processing script to generate the processed_customer_data.parquet file. This only needs to be done once.
-
+```bash
 python src/data_processing.py
+```
 
-Step 2: Start the FastAPI Server
-Start the API server using Uvicorn. The --reload flag enables hot-reloading for development.
+### Step 2: Start the FastAPI Server
+Next, start the API server, which will serve the data to the dashboard.
 
+```bash
 uvicorn src.api:app --reload
+```
+The API will be available at `http://127.0.0.1:8000`. You can access the auto-generated documentation at `http://127.0.0.1:8000/docs`.
 
-The API will be available at http://127.0.0.1:8000. Interactive documentation (Swagger UI) can be accessed at http://127.0.0.1:8000/docs.
+### Step 3: Launch the Streamlit Dashboard
+Finally, in a **new terminal**, run the Streamlit dashboard.
 
-Step 3: Launch the Streamlit Dashboard
-In a new terminal, run the Streamlit application.
-
+```bash
 streamlit run src/dashboard.py
+```
+The interactive dashboard will open in your web browser, usually at `http://localhost:8501`.
 
-The dashboard will automatically open in your web browser, typically at http://localhost:8501.
+---
 
-🌐 API Endpoints
-The FastAPI server provides the following endpoints to access the analytics data.
+## 🌐 API Endpoints
 
-Method
+The FastAPI server exposes the following endpoints:
 
-Endpoint
+| Method | Endpoint                          | Description                                         |
+| :----- | :-------------------------------- | :-------------------------------------------------- |
+| `GET`  | `/performance/stores`             | Get sales performance data for all stores.          |
+| `GET`  | `/customers/rfm-segments`         | Get RFM and K-Means segment data for all customers. |
+| `GET`  | `/insights/seasonality`           | Get monthly and quarterly sales trend data.         |
+| `GET`  | `/insights/discount-impact`       | Get profitability and discount data by category.    |
+| `GET`  | `/customers/repeat-vs-onetime`    | Compare sales from repeat vs. one-time customers.   |
+| `GET`  | `/simulations/campaign`           | Run a campaign ROI simulation for a target segment. |
 
-Description
+---
 
-GET
+## 📊 Dashboard Pages
 
-/performance/stores
+The Streamlit dashboard is organized into several pages for easy navigation:
 
-Get sales performance data for all stores.
+* **Overview:** A high-level summary of key metrics like total sales, total customers, and store performance.
+* **Customer Analysis:** Deep dive into customer segments created by the K-Means model, with visualizations of their characteristics and value.
+* **Performance & Trends:** Visual analysis of seasonal sales patterns and the impact of discounts on profitability.
+* **Campaign Simulator:** An interactive tool for business strategists to model the financial outcome of targeted marketing campaigns.
 
-GET
-
-/customers/rfm-segments
-
-Get RFM and K-Means segment data for all customers.
-
-GET
-
-/insights/seasonality
-
-Get monthly and quarterly sales trend data.
-
-GET
-
-/insights/discount-impact
-
-Get profitability and discount data by category.
-
-GET
-
-/customers/repeat-vs-onetime
-
-Compare sales from repeat vs. one-time customers.
-
-GET
-
-/simulations/campaign
-
-Run a campaign ROI simulation for a target segment.
-
-📊 Dashboard Pages
-The Streamlit dashboard is organized into the following pages for intuitive navigation:
-
-Overview: A high-level summary of key metrics, including total sales, total customers, and overall store performance.
-
-Customer Analysis: A deep dive into the customer segments generated by the K-Means model, with visualizations of their defining characteristics and business value.
-
-Performance & Trends: Visual analysis of seasonal sales patterns and the impact of discounts on profitability.
-
-Campaign Simulator: An interactive tool for strategists to model the financial outcome of marketing campaigns targeted at specific customer segments.
 ## Project Structure
 
 API Link-[https://priyadharshini-d-mlops-capstone.onrender.com/docs]
 
 Dashboard Link-[https://priyadharshini-d-mlops-dashboard.streamlit.app]
+
 
 
 
