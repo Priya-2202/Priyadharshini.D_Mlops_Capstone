@@ -18,7 +18,7 @@ This project is an end-to-end analytics and machine learning pipeline designed t
 
 ## 🎯 Project Overview
 
-The primary goal of this project is to build a robust MLOps pipeline that transforms raw retail data into strategic business insights. The system automates data processing, performs RFM-based customer segmentation with K-Means clustering, and analyzes key business metrics like store performance, profitability, and seasonal trends. These insights are then made accessible to stakeholders via a FastAPI backend and a Streamlit-powered dashboard.
+The primary goal of this project is to build a robust MLOps pipeline that transforms raw retail data into strategic business insights. The system automates data processing, performs RFM-based customer segmentation, and analyzes key business metrics like store performance, profitability, and seasonal trends. These insights are then made accessible to stakeholders via a FastAPI backend and a Streamlit-powered dashboard.
 
 
 
@@ -163,6 +163,7 @@ The Streamlit dashboard is organized into several pages for easy navigation:
 API Link-[https://priyadharshini-d-mlops-capstone.onrender.com/docs]
 
 Dashboard Link-[https://priyadharshini-d-mlops-dashboard.streamlit.app]
+
 
 
 
